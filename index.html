@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portofolio - Dwi Meilani</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#800020',
+                        secondary: '#4A0E17'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- HTML2PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .profile-image {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100
+    transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="fixed w-full top-0 z-50
+        bg-white/80 dark:bg-slate-900/80
+        backdrop-blur-md
+        border-b border-slate-200 dark:border-slate-800">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8
+            h-16 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="font-bold text-xl tracking-tight
+                text-transparent bg-clip-text
+                bg-gradient-to-r from-red-900 via-rose-900 to-amber-900
+                dark:from-rose-400 dark:to-rose-200">
+                Dwi Meilani
+
+                <span class="text-xs ml-2 px-2 py-0.5 rounded
+                    bg-rose-100 dark:bg-rose-950/60
+                    text-rose-900 dark:text-rose-300
+                    font-semibold border border-rose-200 dark:border-rose-800">
+                    SMK Mandiri
+                </span>
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6
+                text-sm font-medium">
+
+                <a href="#about" class="hover:text-rose-800 dark:hover:text-rose-400 transition-colors">
+                    Tentang
+                </a>
+
+                <a href="#skills" class="hover:text-rose-800 dark:hover:text-rose-400 transition-colors">
+                    Keahlian
+                </a>
+
+                <a href="#portfolio" class="hover:text-rose-800 dark:hover:text-rose-400 transition-colors">
+                    Portofolio
+                </a>
+
+                <a href="#contact" class="hover:text-rose-800 dark:hover:text-rose-400 transition-colors">
+                    Kontak
+                </a>
+
+            </nav>
+
+
+            <!-- Right Navigation -->
+            <div class="flex items-center space-x-3">
+
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="p-2 rounded-lg
+                    bg-slate-100 dark:bg-slate-800
+                    text-slate-600 dark:text-slate-300
+                    hover:bg-slate-200 dark:hover:bg-slate-700
+                    transition-colors" aria-label="Toggle Theme">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
+
+
+                <!-- Download CV -->
+                <button onclick="downloadCV()" class="hidden sm:inline-flex items-center gap-2
+                    px-4 py-2 text-sm font-medium text-white
+                    bg-gradient-to-r from-red-900 to-rose-950
+                    hover:from-red-950 hover:to-slate-900
+                    rounded-lg shadow-md hover:shadow-lg
+                    transition-all active:scale-95">
+                    <i class="fas fa-download"></i>
+                    Unduh CV
+                </button>
+
+
+                <!-- Mobile Menu -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg
+                    text-slate-600 dark:text-slate-300
+                    hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden
+            border-b border-slate-200 dark:border-slate-800
+            bg-white dark:bg-slate-900
+            px-4 pt-2 pb-4 space-y-2">
+
+            <a href="#about" class="block px-3 py-2 rounded-md
+                hover:bg-slate-100 dark:hover:bg-slate-800">
+                Tentang
+            </a>
+
+            <a href="#skills" class="block px-3 py-2 rounded-md
+                hover:bg-slate-100 dark:hover:bg-slate-800">
+                Keahlian
+            </a>
+
+            <a href="#portfolio" class="block px-3 py-2 rounded-md
+                hover:bg-slate-100 dark:hover:bg-slate-800">
+                Portofolio
+            </a>
+
+            <a href="#contact" class="block px-3 py-2 rounded-md
+                hover:bg-slate-100 dark:hover:bg-slate-800">
+                Kontak
+            </a>
+
+            <button onclick="downloadCV()" class="w-full mt-2 flex items-center justify-center
+                gap-2 px-4 py-2 text-sm font-medium text-white
+                bg-gradient-to-r from-red-900 to-rose-950
+                rounded-lg">
+                <i class="fas fa-download"></i>
+                Unduh CV
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="flex-grow pt-20">
+
+
+        <!-- =================================================
+             HERO / ABOUT
+        ================================================== -->
+
+        <section id="about" class="py-16 md:py-24
+            max-w-6xl mx-auto
+            px-4 sm:px-6 lg:px-8
+            flex flex-col md:flex-row
+            items-center justify-between
+            gap-12">
+
+            <!-- Text -->
+            <div class="flex-1 text-center md:text-left">
+
+                <span class="inline-block px-3 py-1
+                    text-xs font-semibold tracking-wider
+                    text-rose-900 dark:text-rose-300
+                    uppercase bg-rose-100 dark:bg-rose-950/60
+                    rounded-full mb-4">
+                    Junior Web Developer
+                </span>
+
+
+                <h1 class="text-3xl sm:text-5xl
+                    font-extrabold tracking-tight
+                    text-slate-900 dark:text-white mb-4">
+                    Halo, saya
+
+                    <span class="text-transparent bg-clip-text
+                        bg-gradient-to-r from-red-900
+                        via-rose-900 to-amber-900
+                        dark:from-rose-400 dark:to-rose-200">
+                        Dwi Meilani
+                    </span>
+                </h1>
+
+
+                <p class="text-lg text-slate-600
+                    dark:text-slate-300 mb-6 leading-relaxed">
+                    Pelajar Kelas 12 Rekayasa Perangkat Lunak
+                    di SMK Mandiri.
+
+                    <br>
+
+                    Berfokus pada pengembangan web frontend,
+                    UI/UX, dan teknologi web.
+                </p>
+
+
+                <!-- Buttons -->
+                <div class="flex flex-wrap items-center
+                    justify-center md:justify-start gap-4">
+
+                    <a href="#portfolio" class="px-6 py-3
+                        bg-slate-900 dark:bg-white
+                        text-white dark:text-slate-900
+                        font-semibold rounded-lg shadow
+                        hover:opacity-90 transition-all">
+                        Lihat Karya
+                    </a>
+
+
+                    <button onclick="downloadCV()" class="px-6 py-3
+                        border border-slate-300
+                        dark:border-slate-700
+                        hover:bg-slate-100
+                        dark:hover:bg-slate-800
+                        font-semibold rounded-lg
+                        transition-all
+                        flex items-center gap-2">
+                        <i class="fas fa-file-pdf
+                            text-rose-800 dark:text-rose-400"></i>
+
+                        Download CV
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FOTO PROFIL
+            ================================================== -->
+
+            <div class="flex-shrink-0">
+
+                <div class="relative
+                    w-56 h-56
+                    sm:w-72 sm:h-72
+                    rounded-full
+                    p-2
+                    bg-gradient-to-tr
+                    from-red-900
+                    via-rose-800
+                    to-amber-900
+                    shadow-2xl">
+
+                    <div class="w-full h-full
+                        rounded-full
+                        bg-slate-200 dark:bg-slate-800
+                        flex items-center justify-center
+                        overflow-hidden
+                        border-4
+                        border-white dark:border-slate-900">
+
+                        <!-- FOTO KAMU -->
+                        <img src="foto dwi.jpeg" alt="Foto Profil Dwi Meilani" class="w-full h-full profile-image">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SKILLS
+        ================================================== -->
+
+        <section id="skills" class="py-16
+            bg-slate-100 dark:bg-slate-800/50">
+
+            <div class="max-w-6xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+                <h2 class="text-2xl font-bold text-center mb-2">
+                    Keahlian & Teknologi
+                </h2>
+
+                <p class="text-center
+                    text-slate-500 dark:text-slate-400
+                    mb-10 text-sm">
+                    Teknologi yang dipelajari di jurusan
+                    Rekayasa Perangkat Lunak
+                </p>
+
+
+                <div class="grid grid-cols-2
+                    sm:grid-cols-3
+                    md:grid-cols-6
+                    gap-4">
+
+                    <!-- HTML -->
+                    <div class="p-4 bg-white dark:bg-slate-800
+                        rounded-xl shadow-sm text-center
+                        border border-slate-200/60
+                        dark:border-slate-700/60">
+                        <i class="fab fa-html5
+                            text-3xl text-orange-500 mb-2"></i>
+
+                        <p class="font-medium text-sm">
+                            HTML5
+                        </p>
+                    </div>
+
+
+                    <!-- CSS -->
+                    <div class="p-4 bg-white dark:bg-slate-800
+                        rounded-xl shadow-sm text-center
+                        border border-slate-200/60
+                        dark:border-slate-700/60">
+                        <i class="fab fa-css3-alt
+                            text-3xl text-blue-500 mb-2"></i>
+
+                        <p class="font-medium text-sm">
+                            CSS3 / Tailwind
+                        </p>
+                    </div>
+
+
+                    <!-- JavaScript -->
+                    <div class="p-4 bg-white dark:bg-slate-800
+                        rounded-xl shadow-sm text-center
+                        border border-slate-200/60
+                        dark:border-slate-700/60">
+                        <i class="fab fa-js
+                            text-3xl text-yellow-500 mb-2"></i>
+
+                        <p class="font-medium text-sm">
+                            JavaScript
+                        </p>
+                    </div>
+
+
+                    <!-- PHP -->
+                    <div class="p-4 bg-white dark:bg-slate-800
+                        rounded-xl shadow-sm text-center
+                        border border-slate-200/60
+                        dark:border-slate-700/60">
+                        <i class="fab fa-php
+                            text-3xl text-indigo-500 mb-2"></i>
+
+                        <p class="font-medium text-sm">
+                            PHP / Laravel
+                        </p>
+                    </div>
+
+
+                    <!-- MySQL -->
+                    <div class="p-4 bg-white dark:bg-slate-800
+                        rounded-xl shadow-sm text-center
+                        border border-slate-200/60
+                        dark:border-slate-700/60">
+                        <i class="fas fa-database
+                            text-3xl text-teal-500 mb-2"></i>
+
+                        <p class="font-medium text-sm">
+                            MySQL
+                        </p>
+                    </div>
+
+
+                    <!-- Figma -->
+                    <div class="p-4 bg-white dark:bg-slate-800
+                        rounded-xl shadow-sm text-center
+                        border border-slate-200/60
+                        dark:border-slate-700/60">
+                        <i class="fab fa-figma
+                            text-3xl text-rose-800
+                            dark:text-rose-400 mb-2"></i>
+
+                        <p class="font-medium text-sm">
+                            Figma UI/UX
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PORTFOLIO
+        ================================================== -->
+
+        <section id="portfolio" class="py-16
+            max-w-6xl mx-auto
+            px-4 sm:px-6 lg:px-8">
+
+            <h2 class="text-2xl font-bold
+                text-center mb-2">
+                Portofolio Proyek
+            </h2>
+
+            <p class="text-center
+                text-slate-500 dark:text-slate-400
+                mb-8 text-sm">
+                Hasil karya tugas sekolah dan
+                proyek mandiri
+            </p>
+
+
+            <div class="grid grid-cols-1
+                md:grid-cols-3 gap-6">
+
+
+                <!-- PROJECT 1 -->
+                <div class="bg-white dark:bg-slate-800
+                    rounded-xl overflow-hidden
+                    shadow-sm
+                    border border-slate-200/60
+                    dark:border-slate-700/60
+                    hover:shadow-md transition-shadow">
+
+                    <div class="h-40
+                        bg-gradient-to-r
+                        from-red-900 to-rose-900
+                        flex items-center justify-center
+                        text-white">
+                        <i class="fas fa-school text-4xl"></i>
+                    </div>
+
+                    <div class="p-5">
+
+                        <span class="text-xs font-semibold
+                            text-rose-800 dark:text-rose-400
+                            uppercase tracking-wider">
+                            Web Application
+                        </span>
+
+                        <h3 class="font-bold text-lg
+                            mt-1 mb-2">
+                            Sistem Informasi Perpustakaan
+                        </h3>
+
+                        <p class="text-slate-600
+                            dark:text-slate-300
+                            text-sm mb-4">
+                            Aplikasi manajemen peminjaman
+                            buku berbasis PHP Native
+                            dan MySQL untuk perpustakaan sekolah.
+                        </p>
+
+                        <div class="flex items-center gap-2
+                            text-xs font-medium
+                            text-slate-500
+                            dark:text-slate-400">
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                PHP
+                            </span>
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                MySQL
+                            </span>
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                Bootstrap
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+                <div class="bg-white dark:bg-slate-800
+                    rounded-xl overflow-hidden
+                    shadow-sm
+                    border border-slate-200/60
+                    dark:border-slate-700/60
+                    hover:shadow-md transition-shadow">
+
+                    <div class="h-40
+                        bg-gradient-to-r
+                        from-rose-950 to-red-900
+                        flex items-center justify-center
+                        text-white">
+                        <i class="fas fa-shopping-cart
+                            text-4xl"></i>
+                    </div>
+
+                    <div class="p-5">
+
+                        <span class="text-xs font-semibold
+                            text-rose-800 dark:text-rose-400
+                            uppercase tracking-wider">
+                            UI/UX Design
+                        </span>
+
+                        <h3 class="font-bold text-lg
+                            mt-1 mb-2">
+                            Redesign Kantin Online
+                        </h3>
+
+                        <p class="text-slate-600
+                            dark:text-slate-300
+                            text-sm mb-4">
+                            Desain antarmuka pemesanan makanan
+                            online di lingkungan SMK Mandiri
+                            menggunakan Figma.
+                        </p>
+
+                        <div class="flex items-center gap-2
+                            text-xs font-medium
+                            text-slate-500
+                            dark:text-slate-400">
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                Figma
+                            </span>
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                Prototyping
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 3 -->
+                <div class="bg-white dark:bg-slate-800
+                    rounded-xl overflow-hidden
+                    shadow-sm
+                    border border-slate-200/60
+                    dark:border-slate-700/60
+                    hover:shadow-md transition-shadow">
+
+                    <div class="h-40
+                        bg-gradient-to-r
+                        from-amber-950 to-red-900
+                        flex items-center justify-center
+                        text-white">
+                        <i class="fas fa-laptop-code
+                            text-4xl"></i>
+                    </div>
+
+                    <div class="p-5">
+
+                        <span class="text-xs font-semibold
+                            text-rose-800 dark:text-rose-400
+                            uppercase tracking-wider">
+                            Frontend Web
+                        </span>
+
+                        <h3 class="font-bold text-lg
+                            mt-1 mb-2">
+                            Website Landing Page RPL
+                        </h3>
+
+                        <p class="text-slate-600
+                            dark:text-slate-300
+                            text-sm mb-4">
+                            Landing page interaktif untuk
+                            promosi jurusan Rekayasa
+                            Perangkat Lunak.
+                        </p>
+
+                        <div class="flex items-center gap-2
+                            text-xs font-medium
+                            text-slate-500
+                            dark:text-slate-400">
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                HTML/CSS
+                            </span>
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                Tailwind
+                            </span>
+
+                            <span class="px-2 py-1
+                                bg-slate-100 dark:bg-slate-700
+                                rounded">
+                                JS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section id="contact" class="py-16
+            bg-slate-100 dark:bg-slate-800/50">
+
+            <div class="max-w-3xl mx-auto
+                px-4 sm:px-6 lg:px-8
+                text-center">
+
+                <h2 class="text-2xl font-bold mb-2">
+                    Hubungi Saya
+                </h2>
+
+                <p class="text-slate-500
+                    dark:text-slate-400
+                    mb-8 text-sm">
+                    Tertarik bekerja sama atau berdiskusi
+                    mengenai proyek web?
+                </p>
+
+
+                <div class="flex justify-center
+                    gap-6 text-2xl
+                    text-slate-600
+                    dark:text-slate-300">
+
+                    <a href="#" class="hover:text-rose-800
+                        dark:hover:text-rose-400
+                        transition-colors" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="#" class="hover:text-rose-800
+                        dark:hover:text-rose-400
+                        transition-colors" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="hover:text-rose-800
+                        dark:hover:text-rose-400
+                        transition-colors" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <a href="mailto:dwimeilani0165@gmail.com" class="hover:text-rose-800
+                        dark:hover:text-rose-400
+                        transition-colors" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="bg-white dark:bg-slate-900
+        border-t border-slate-200
+        dark:border-slate-800
+        py-6 text-center
+        text-xs text-slate-500
+        dark:text-slate-400">
+
+        <p>
+            &copy; 2026 Dwi Meilani.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         CV TEMPLATE
+    ====================================================== -->
+
+    <div class="hidden">
+
+        <div id="cv-template" class="p-8 bg-white text-slate-900
+            max-w-2xl mx-auto" style="font-family: Arial, sans-serif;">
+
+            <!-- CV HEADER -->
+            <div class="border-b-2 border-red-900
+                pb-4 mb-4 text-center">
+
+                <!-- FOTO CV -->
+                <div class="flex justify-center mb-4">
+
+                    <img src="profile.jpg" alt="Foto Dwi Meilani" style="
+                            width: 110px;
+                            height: 110px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            object-position: center;
+                            border: 4px solid #800020;
+                        ">
+
+                </div>
+
+
+                <h1 class="text-2xl font-bold
+                    uppercase tracking-wide
+                    text-slate-900">
+                    Dwi Meilani
+                </h1>
+
+
+                <p class="text-red-900
+                    font-semibold text-sm">
+                    Kelas 12 RPL 2 — SMK Mandiri
+                </p>
+
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Email: dwimeilani0165@gmail.com
+                    |
+                    Telepon: +62 812-3456-7890
+                </p>
+
+            </div>
+
+
+            <!-- RINGKASAN -->
+            <div class="mb-4">
+
+                <h2 class="text-sm font-bold uppercase
+                    text-slate-700
+                    border-b border-slate-300
+                    pb-1 mb-2">
+                    Ringkasan Eksekutif
+                </h2>
+
+                <p class="text-xs text-slate-600
+                    leading-relaxed">
+                    Saya adalah siswi aktif kelas 12
+                    jurusan Rekayasa Perangkat Lunak
+                    di SMK Mandiri. Memiliki minat
+                    dalam pengembangan antarmuka web,
+                    pemrograman, pengelolaan basis data,
+                    serta perancangan UI/UX.
+                </p>
+
+            </div>
+
+
+            <!-- PENDIDIKAN -->
+            <div class="mb-4">
+
+                <h2 class="text-sm font-bold uppercase
+                    text-slate-700
+                    border-b border-slate-300
+                    pb-1 mb-2">
+                    Pendidikan
+                </h2>
+
+                <div class="text-xs">
+
+                    <p class="font-bold">
+                        SMK Mandiri
+                    </p>
+
+                    <p class="text-slate-600">
+                        Rekayasa Perangkat Lunak
+                    </p>
+
+                    <p class="text-slate-500">
+                        2024 - 2027
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KEAHLIAN -->
+            <div class="mb-4">
+
+                <h2 class="text-sm font-bold uppercase
+                    text-slate-700
+                    border-b border-slate-300
+                    pb-1 mb-2">
+                    Keahlian Utama
+                </h2>
+
+                <ul class="list-none text-xs
+                    text-slate-600 space-y-1">
+
+                    <li>
+                        <strong>
+                            Bahasa Pemrograman & Markup:
+                        </strong>
+                        HTML5, CSS3, JavaScript,
+                        PHP Native
+                    </li>
+
+                    <li>
+                        <strong>
+                            Framework & Tools:
+                        </strong>
+                        Tailwind CSS, Bootstrap,
+                        Git, Figma
+                    </li>
+
+                    <li>
+                        <strong>
+                            Database:
+                        </strong>
+                        MySQL / MariaDB
+                    </li>
+
+                    <li>
+                        <strong>
+                            Soft Skills:
+                        </strong>
+                        Kerjasama Tim,
+                        Problem Solving,
+                        Manajemen Waktu
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- PROYEK -->
+            <div class="mb-4">
+
+                <h2 class="text-sm font-bold uppercase
+                    text-slate-700
+                    border-b border-slate-300
+                    pb-1 mb-2">
+                    Pengalaman & Proyek Sekolah
+                </h2>
+
+
+                <div class="mb-3 text-xs">
+
+                    <p class="font-bold">
+                        Pengembang Web —
+                        Aplikasi Perpustakaan Sekolah
+                    </p>
+
+                    <p class="text-slate-600">
+                        Merancang database MySQL dan
+                        membangun backend berbasis PHP
+                        untuk sistem sirkulasi
+                        peminjaman buku.
+                    </p>
+
+                </div>
+
+
+                <div class="text-xs">
+
+                    <p class="font-bold">
+                        UI/UX Designer —
+                        Prototipe Kantin Sekolah
+                    </p>
+
+                    <p class="text-slate-600">
+                        Membuat wireframe dan prototipe
+                        aplikasi pemesanan makanan
+                        menggunakan Figma.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER CV -->
+            <div class="mt-6 pt-3
+                border-t border-slate-200
+                text-center">
+
+                <p class="text-xs text-slate-400">
+                    Dwi Meilani — Junior Web Developer
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* ================================================
+           DARK MODE
+        ================================================= */
+
+        const themeToggleBtn =
+            document.getElementById('theme-toggle');
+
+        const themeIcon =
+            document.getElementById('theme-icon');
+
+
+        if (
+            localStorage.getItem('theme') === 'dark' ||
+            (
+                !('theme' in localStorage) &&
+                window.matchMedia(
+                    '(prefers-color-scheme: dark)'
+                ).matches
+            )
+        ) {
+
+            document.documentElement.classList.add('dark');
+
+            themeIcon.classList.replace(
+                'fa-moon',
+                'fa-sun'
+            );
+
+        } else {
+
+            document.documentElement.classList.remove('dark');
+
+            themeIcon.classList.replace(
+                'fa-sun',
+                'fa-moon'
+            );
+        }
+
+
+        themeToggleBtn.addEventListener(
+            'click',
+            () => {
+
+                if (
+                    document.documentElement
+                        .classList.contains('dark')
+                ) {
+
+                    document.documentElement
+                        .classList.remove('dark');
+
+                    localStorage.setItem(
+                        'theme',
+                        'light'
+                    );
+
+                    themeIcon.classList.replace(
+                        'fa-sun',
+                        'fa-moon'
+                    );
+
+                } else {
+
+                    document.documentElement
+                        .classList.add('dark');
+
+                    localStorage.setItem(
+                        'theme',
+                        'dark'
+                    );
+
+                    themeIcon.classList.replace(
+                        'fa-moon',
+                        'fa-sun'
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* ================================================
+           MOBILE MENU
+        ================================================= */
+
+        const mobileBtn =
+            document.getElementById(
+                'mobile-menu-btn'
+            );
+
+        const mobileMenu =
+            document.getElementById(
+                'mobile-menu'
+            );
+
+
+        mobileBtn.addEventListener(
+            'click',
+            () => {
+
+                mobileMenu.classList.toggle(
+                    'hidden'
+                );
+
+            }
+        );
+
+
+        /* Tutup menu setelah klik link */
+
+        const mobileLinks =
+            mobileMenu.querySelectorAll('a');
+
+        mobileLinks.forEach(
+            link => {
+
+                link.addEventListener(
+                    'click',
+                    () => {
+
+                        mobileMenu.classList.add(
+                            'hidden'
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ================================================
+           DOWNLOAD CV PDF
+        ================================================= */
+
+        function downloadCV() {
+
+            const element =
+                document.getElementById(
+                    'cv-template'
+                );
+
+            const container =
+                element.parentElement;
+
+
+            const options = {
+
+                margin: 0.5,
+
+                filename:
+                    'CV_Dwi_Meilani_SMK_Mandiri.pdf',
+
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                },
+
+                jsPDF: {
+                    unit: 'in',
+                    format: 'letter',
+                    orientation: 'portrait'
+                }
+
+            };
+
+
+            /*
+             * Tampilkan template sementara
+             * agar html2pdf dapat membacanya.
+             */
+
+            container.classList.remove(
+                'hidden'
+            );
+
+
+            html2pdf()
+                .set(options)
+                .from(element)
+                .save()
+                .then(() => {
+
+                    container.classList.add(
+                        'hidden'
+                    );
+
+                })
+                .catch(error => {
+
+                    console.error(
+                        'Gagal membuat PDF:',
+                        error
+                    );
+
+                    container.classList.add(
+                        'hidden'
+                    );
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
